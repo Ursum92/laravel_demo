@@ -13,8 +13,31 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                </div>
+            </div>
 
-                    You are logged in!
+            <div class="card">
+
+                <div class="card-body">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Handle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($users as $user)
+                            <tr>
+                                <th>{{$user->id}}</th>
+                                <td>{{$user->name}}</td>
+                                <td>{{$user->email}}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
